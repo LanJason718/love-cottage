@@ -5,7 +5,7 @@ Page({
   data: {
     bannerList: [
       {
-        url: 'https://love-cattage.oss-cn-shanghai.aliyuncs.com/front/public/banner/1729846727715.jpg',
+        url: 'https://image.xiaoyitao.cn/front/public/banner/1729846727715.jpg',
       },
     ],
     env: getApp().globalData.env,
