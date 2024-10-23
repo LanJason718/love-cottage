@@ -1,0 +1,56 @@
+.BOX {
+  background: #fff;
+  width: 96%;
+  margin: 0 auto;
+  border-radius: 20rpx;
+  padding: 20rpx 0;
+  .nameBox {
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: var(--cell-horizontal-padding, 16px);
+    .name {
+      width: 480rpx;
+    }
+  }
+
+  .van-stepper__minus {
+    background: var(--themeColor);
+    color: #fff;
+  }
+
+  .van-stepper__minus--hover {
+    background: rgb(255, 160, 160) !important;
+    color: #fff;
+  }
+
+  .van-stepper__plus {
+    background: var(--themeColor);
+    color: #fff;
+  }
+  .van-stepper__plus--hover {
+    background: rgb(255, 160, 160) !important;
+    color: #fff;
+  }
+
+  .van-stepper__input--disabled {
+    color: var(--inputColor);
+  }
+
+  .group {
+    border-bottom: 1px solid rgb(246, 246, 246);
+    width: 90%;
+    min-height: 220px;
+    margin: 0 auto;
+    .van-radio {
+      margin: 0 auto;
+      height: 66rpx;
+      background: rgb(255, 255, 255) !important;
+    }
+  }
+  .imageBox {
+    background: #fff;
+    padding: 0 50rpx 20rpx;
+  }
+}

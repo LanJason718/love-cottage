@@ -1,0 +1,35 @@
+<scroll-btn bind:onSubmit="submit">
+  <view slot="body">
+    <view class="BOX">
+      <van-field required model:value="{{ realName }}" label="真实姓名" placeholder="请填写真实姓名" input-align="right" />
+
+      <van-field required model:value="{{ grade }}" label="年级 专业" placeholder="请填写年级和专业" input-align="right" />
+
+      <van-field required model:value="{{ phone }}" label="联系方式(手机号)" title-width="300rpx" placeholder="请填写联系方式" input-align="right" />
+
+      <van-cell title="捐赠物品名称及数量" required border="{{ false }}" />
+
+      <view class="nameBox">
+        <van-field class="name" model:value="{{ itemName }}" placeholder="请填写捐赠物品名称及数量" maxlength="14" />
+        <van-stepper value="{{ number }}" long-press disable-input integer bind:change="stepChange" />
+      </view>
+
+      <van-cell title="捐赠物品分类(单选)" required border="{{ false }}" />
+
+      <view class="group ">
+        <van-radio-group model:value="{{ categoryId }}" bind:change="chooseRadio">
+          <view wx:for="{{categories}}" wx:key="index">
+            <van-radio name="{{item.categoryId}}" checked-color="#e95555">{{item.name}}</van-radio>
+          </view>
+        </van-radio-group>
+      </view>
+
+      <van-cell title="捐赠物品的照片" required border="{{ false }}" />
+      <view class="imageBox">
+        <van-uploader file-list="{{ fileList }}" max-count="1"  bind:after-read="afterRead"  bind:delete="deleteClick" />
+      </view>
+    </view>
+  </view>
+</scroll-btn>
+
+<van-dialog id="van-dialog" />
