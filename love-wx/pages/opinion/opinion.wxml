@@ -1,0 +1,3 @@
+<textarea class="textarea" placeholder="请输入您的意见与建议(匿名)" model:value="{{value}}" />
+<view class="desc">程序bug请联系 => QQ: 2458657561</view>
+<view class="submit" bind:tap="submit">提交</view>

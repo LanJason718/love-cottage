@@ -1,0 +1,26 @@
+.nav-bar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background: #f6f6f6;
+  .icon {
+    padding-left: 20rpx;
+    transform: translateY(10rpx);
+  }
+  .box {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    .tabs {
+      transform: translateY(-10rpx);
+
+      .header {
+        width: 400rpx;
+        margin-left: 60rpx;
+      }
+      .header2 {
+        background: #f6f6f6;
+      }
+    }
+  }
+}

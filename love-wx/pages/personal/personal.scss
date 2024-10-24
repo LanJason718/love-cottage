@@ -1,0 +1,22 @@
+.topBox {
+  width: 91%;
+  height: 180rpx;
+  background: #fff;
+  margin: 50rpx auto 80rpx;
+  border-radius: 20rpx;
+  display: flex;
+  align-items: center;
+  font-size: 36rpx;
+  .avatar {
+    width: 80rpx;
+    height: 80rpx;
+    padding: 20rpx;
+    margin: 0 40rpx;
+    border: 1rpx solid rgb(244, 244, 244);
+    border-radius: 50%;
+    background: rgb(255, 229, 229);
+  }
+  .uid {
+    color: rgb(94, 94, 94);
+  }
+}

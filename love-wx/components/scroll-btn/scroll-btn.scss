@@ -1,0 +1,40 @@
+.scroll {
+  width: 750rpx;
+  box-sizing: border-box;
+}
+
+.box {
+  background: #f8f8f8;
+  width: 100%;
+  height: 160rpx;
+  padding: 8rpx 0 8rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  .desc {
+    color: var(--descColor);
+    padding: 0 0 12rpx 0;
+    font-size: 28rpx;
+  }
+
+  .save {
+    width: 400rpx;
+    height: 78rpx;
+    border-radius: 20rpx;
+    background: var(--themeColor);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 36rpx;
+    box-shadow: -2rpx 2rpx 6rpx #e67f7f, 0rpx 4rpx 4rpx 2rpx #ff8787,
+      0rpx 4rpx 4rpx 2rpx #ff8787;
+  }
+  .hover {
+    position: relative;
+    top: 4rpx;
+    box-shadow: 0px 4px 2px #ff8787 inset, -4rpx 6rpx 4rpx 2rpx #ff8787;
+  }
+}

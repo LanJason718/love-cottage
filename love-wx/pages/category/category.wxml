@@ -1,0 +1,30 @@
+<view class="top">点击图片可预览,点击卡片可选择领取的物品~</view>
+<view class="container">
+  <view class="sidebar">
+    <van-sidebar active-key="{{ activeKey }}" bind:change="onChange">
+      <van-sidebar-item title="{{item.name}}" wx:for="{{categories}}" wx:key="index" />
+    </van-sidebar>
+  </view>
+
+  <scroll-view class="itemContainer" scroll-y>
+    <view class=" item" wx:for="{{itemList}}" wx:key="index">
+      <image class="img" src="{{item.picture}}" lazy-load bind:tap="preview" data-index="{{index}}"></image>
+
+      <view class="info" bind:tap="confirm" data-index="{{index}}">
+        <view class="titleBox">
+          <view class="title van-multi-ellipsis--l3">{{item.name}}</view>
+        </view>
+        <view class="numBox">
+          <view class="text2">库存:</view>
+          <view class="num"> x {{item.number}}</view>
+        </view>
+
+        <view class="text">捐赠时间: {{item.createTime}}</view>
+
+      </view>
+    </view>
+
+    <empty wx:if="{{itemList.length===0}}" />
+
+  </scroll-view>
+</view>

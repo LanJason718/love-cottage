@@ -1,0 +1,16 @@
+<!-- 自定义顶部栏 -->
+<view class="nav-bar" style="height:{{navBarHeight}}px;">
+  <view class="box" style=" height:{{menuHeight}}px; min-height:{{menuHeight}}px; line-height:{{menuHeight}}px; left:{{menuRight}}px; top:{{menuTop}}px;">
+    <van-icon custom-class="icon" name="wap-home-o" color="#000" size="48rpx" bind:click="backHome" />
+    <view class="tabs">
+      <van-tabs custom-class="header" nav-class="header2" active="{{ navActiveIndex }}" bind:change="onChange">
+        <van-tab title="记录"></van-tab>
+        <van-tab title="统计"></van-tab>
+        <van-tab title="反馈"></van-tab>
+      </van-tabs>
+    </view>
+  </view>
+</view>
+
+<!-- 占位，高度与顶部栏一样 -->
+<view style="height:{{navBarHeight}}px;"></view>

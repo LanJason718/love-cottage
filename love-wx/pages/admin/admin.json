@@ -1,0 +1,22 @@
+{
+  "usingComponents": {
+    "van-tab": "@vant/weapp/tab/index",
+    "van-popup": "@vant/weapp/popup/index",
+    "van-tabs": "@vant/weapp/tabs/index",
+    "van-dropdown-menu": "@vant/weapp/dropdown-menu/index",
+    "van-dropdown-item": "@vant/weapp/dropdown-item/index",
+    "van-icon": "@vant/weapp/icon/index",
+    "van-calendar": "@vant/weapp/calendar/index",
+    "van-skeleton": "@vant/weapp/skeleton/index",
+
+    "scroller": "coolui-scroller/scroller/index",
+    "nav-pannel": "coolui-scroller/nav-pannel/index",
+    "search": "coolui-scroller/search/index",
+    "ec-canvas": "../../components/ec-canvas/ec-canvas",
+
+    "record-item": "../../components/record-item/record-item",
+    "navigation-bar": "../../components/navigation-bar/navigation-bar",
+    "empty": "../../components/empty/empty"
+  },
+  "navigationStyle": "custom"
+}

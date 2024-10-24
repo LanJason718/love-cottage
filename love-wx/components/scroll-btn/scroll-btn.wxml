@@ -1,0 +1,12 @@
+<scroll-view class="scroll" style="height: calc(100% - 160rpx - {{safeBottom}})" scroll-y>
+  <slot name="body"></slot>
+</scroll-view>
+
+<view class="box">
+  <view class="desc">温馨提示: 个人信息仅后台管理员可见</view>
+  <view class="save" hover-class="hover" bind:tap="onSubmit">
+    <view style="margin-left: 10rpx;">{{title}}</view>
+  </view>
+</view>
+
+<view style="height: {{safeBottom}};"></view>

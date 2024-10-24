@@ -1,0 +1,85 @@
+<view style="height: 10vh;">
+  <navigation-bar navActiveIndex="{{navActiveIndex}}" bind:onchange="onchangeNavigation"></navigation-bar>
+</view>
+<van-popup custom-class="pop" round show="{{ recordPopShow }}" bind:close="onClose">
+  <view>姓名: {{selected.realName}}</view>
+  <view>年级: {{selected.grade}}</view>
+  <view>手机号: {{selected.phone}}</view>
+  <image class="img" src="{{selected.picture}}" mode="" bind:tap="preview" lazy-load />
+</van-popup>
+
+<van-calendar show="{{ dateShow }}" type="range" min-date="{{ minDate }}" max-date="{{ maxDate }}" bind:close="dateClose" bind:confirm="dateConfirm" />
+
+<view class="pannel-inner" style="height:90vh;">
+  <nav-pannel active="{{navActiveIndex}}" animation="{{false}}">
+    <scroller scroll="{{false}}" style="height:90vh;">
+      <view class="headerBox">
+        <van-dropdown-menu custom-class="menu1">
+          <van-dropdown-item value="{{ value_dropdown }}" options="{{ option1 }}" bind:change="dropdownChange" />
+        </van-dropdown-menu>
+
+        <view wx:if="{{value_dropdown=='全部' }}" class="icons">
+          <van-icon custom-class="bullhornIcon" name="envelop-o" size="48rpx" info="{{info!=0?info:''}}" bind:click="gotoLookOpinions" />
+        </view>
+
+        <van-dropdown-menu wx:if="{{value_dropdown=='物品类别' }}">
+          <van-dropdown-item value="{{ categoryId }}" options="{{ option2 }}" bind:change="dropdownChange2" />
+        </van-dropdown-menu>
+
+        <search search-btn="search-btn" model:key="{{realName_search}}" style="--input-bg-color:#FFF;" clearable placeholder="请输入姓名" bind:confirm="searchConfirm" bind:btnClick="searchConfirm" wx:if="{{value_dropdown=='姓名' }}" />
+
+        <search search-btn="search-btn" model:key="{{itemName_search}}" style="--input-bg-color:#FFF;" clearable placeholder="请输入物品名称" bind:confirm="searchConfirm" bind:btnClick="searchConfirm" wx:if="{{value_dropdown=='物品名称' }}" />
+
+        <view class="date" bind:tap="dateShoww" wx:if="{{value_dropdown=='日期' }}">{{date?date:'点击选择日期'}}</view>
+
+      </view>
+      <view class="tabs">
+        <van-tabs active="{{ type }}" swipeable="{{false}}" color="#e95555" title-active-color="#e95555" bind:click="recordTypeChange">
+          <van-tab title="全部记录" name="2"></van-tab>
+          <van-tab title="捐赠记录" name="0"></van-tab>
+          <van-tab title="领取记录" name="1"></van-tab>
+        </van-tabs>
+      </view>
+
+      <van-skeleton title row="3" loading="{{ loadingSkeleton }}">
+        <scroll-view scroll-y style="height:76vh;width: 750rpx;" bindscrolltolower="loadMore">
+          <record-item wx:for="{{recordList}}" wx:key="index" item="{{item}}" index="{{index}}" bind:preview='preview' bind:showPop="showPop">
+          </record-item>
+          <!-- 暂无内容 -->
+          <empty wx:if="{{!loading &&recordList.length===0}}" />
+          <!-- 加载中状态 -->
+          <view wx:if="{{loading}}" style="text-align: center; padding: 20px;color: #b4b4b4;">数据加载中...</view>
+          <view wx:if="{{!loading && recordList.length > 0 && !hasMore}}" style="text-align: center; padding: 20px;color: #b4b4b4;">没有更多数据了</view>
+          <view style="height: 20rpx;" wx:if="{{recordList.length>0}}"></view>
+        </scroll-view>
+      </van-skeleton>
+    </scroller>
+
+
+    <scroller scroll="{{false}}">
+      <view class="echart_panel">
+        <ec-canvas id="mychart-dom-pie" canvas-id="mychart-pie" ec="{{ ecPie }}"></ec-canvas>
+      </view>
+      <view class="echart_panel">
+        <ec-canvas id="mychart-dom-line" canvas-id="mychart-line" ec="{{ ecLine }}"></ec-canvas>
+      </view>
+    </scroller>
+
+    <scroller scroll="{{false}}" style="height: 90vh;">
+      <scroll-view style="height: 90vh;">
+        <empty wx:if="{{feedbackList.length===0}}" />
+        <item wx:for="{{feedbackList}}" wx:key="index">
+          <!-- 我是列表项 -->
+          <view class="box">
+            <view class="topBox">
+              <view style="flex: 4;"></view>
+              <view style="flex: 5;">{{item.createTime}}</view>
+            </view>
+            <view class="content ">{{item.content}}</view>
+          </view>
+        </item>
+      </scroll-view>
+
+    </scroller>
+  </nav-pannel>
+</view>

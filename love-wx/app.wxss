@@ -1,10 +1,76 @@
-/**app.wxss**/
-.container {
+page {
+  font-size: 32rpx;
+  color: var(--globalColor);
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding: 200rpx 0;
-  box-sizing: border-box;
-} 
+  background-color: #f6f6f6;
+  --themeColor: #e95555;
+  --zhuhong: #ff4b02;
+  --globalColor: #1a1b1c;
+  --labelColor: #151515;
+  --inputColor: #585858;
+  --placehodelColor: #9b9b9b;
+  --descColor: #b4b4b4;
+
+  font-family: BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Segoe UI, Arial, Roboto, 'PingFang SC', 'miui', 'Hiragino Sans GB', 'Microsoft Yahei', sans-serif;
+}
+
+.van-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.van-multi-ellipsis--l2 {
+  -webkit-line-clamp: 2;
+}
+
+.van-multi-ellipsis--l2,
+.van-multi-ellipsis--l3 {
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.van-multi-ellipsis--l3 {
+  -webkit-line-clamp: 3;
+}
+
+.van-clearfix:after {
+  clear: both;
+  content: '';
+  display: table;
+}
+
+.van-cell__title {
+  color: var(--labelColor) !important;
+  font-size: 32rpx;
+}
+
+.van-cell__value {
+  color: var(--inputColor) !important;
+  font-size: 32rpx;
+}
+
+.van-field__label {
+  color: var(--labelColor) !important;
+  font-size: 32rpx;
+}
+
+.van-field__placeholder {
+  color: var(--placehodelColor) !important;
+  font-size: 32rpx;
+}
+
+.van-field__control {
+  color: var(--inputColor) !important;
+  font-size: 32rpx;
+}
+
+.van-radio {
+  font-size: 30rpx;
+}
+
+.van-ellipsis {
+  font-size: 32rpx;
+}

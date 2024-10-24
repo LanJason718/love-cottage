@@ -1,0 +1,17 @@
+<view style="height: var(--tabs-line-height,44px);">
+  <van-tabs active="{{ active }}" swipeable="{{false}}" color="#e95555" title-active-color="#e95555" bind:change="onChange">
+    <van-tab title="捐赠记录"></van-tab>
+    <van-tab title="领取记录"></van-tab>
+  </van-tabs>
+</view>
+
+<scroll-view scroll-y style="height: calc(100vh - var(--tabs-line-height,44px))" bindscrolltolower="loadMore">
+  <record-item wx:for="{{recordList}}" wx:key="index" item="{{item}}" index="{{index}}" bind:preview='preview'>
+  </record-item>
+  <!-- 暂无内容 -->
+  <empty wx:if="{{!loading &&recordList.length===0}}" />
+  <!-- 加载中状态 -->
+  <view wx:if="{{loading}}" style="text-align: center; padding: 20px;color: #b4b4b4;">数据加载中...</view>
+  <view wx:if="{{!hasMore}}" style="text-align: center; padding: 20px;color: #b4b4b4;">没有更多数据了</view>
+  <view style="height: 20rpx;" wx:if="{{recordList.length>0}}"></view>
+</scroll-view>

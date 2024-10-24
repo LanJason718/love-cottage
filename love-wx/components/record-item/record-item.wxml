@@ -1,0 +1,17 @@
+<view class="container">
+  <view class="box" data-index="{{index}}" bind:tap="showPop">
+    <image class="img" lazy-load data-index="{{index}}" src="{{item.picture}}" catch:tap="preview"></image>
+    <view class="info">
+      <view class="titleBox">
+        <view class="title">{{item.name}}</view>
+        <view class="status" wx:if="{{item.type==0}}">捐赠</view>
+        <view class="status" wx:if="{{item.type==1}}">领取</view>
+      </view>
+      <view class="categoryBox">
+        <view class="text1">类别: {{item.categoryName}}</view>
+        <view class="text2">X {{item.number}}</view>
+      </view>
+      <view class="text1">时间: {{item.createTime}}</view>
+    </view>
+  </view>
+</view>

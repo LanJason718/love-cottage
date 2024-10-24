@@ -1,0 +1,10 @@
+<view class="topBox">
+  <image class="avatar" src="../../static/images/logo.png" mage class="avatar" src="../../static/images/logo.png" bindtouchstart="handleTouchStart" bindtouchend="handleTouchEnd"></image>
+  <text class="uid" user-select>爱心小屋</text>
+</view>
+<van-cell-group inset>
+  <van-cell title-class="left20" icon="notes-o" title="捐赠/领取记录" is-link url="../records/records" />
+  <van-cell title-class="left20" icon="envelop-o" title="意见与建议" is-link url="../opinion/opinion" />
+  <van-cell title-class="left20" icon="manager-o" title="管理员入口" is-link url="../admin/admin" wx:if="{{isAdmin}}" />
+
+</van-cell-group>

@@ -1,15 +1,41 @@
 {
+  "usingComponents": {
+  },
   "pages": [
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/personal/personal",
+    "pages/donation/donation",
+    "pages/receive/receive",
+    "pages/category/category",
+    "pages/records/records",
+    "pages/admin/admin",
+    "pages/opinion/opinion"
   ],
   "window": {
     "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "Weixin",
-    "navigationBarBackgroundColor": "#ffffff"
+    "navigationBarTitleText": "爱心小屋",
+    "navigationBarBackgroundColor": "#fff"
   },
-  "style": "v2",
   "componentFramework": "glass-easel",
   "sitemapLocation": "sitemap.json",
-  "lazyCodeLoading": "requiredComponents"
+  "lazyCodeLoading": "requiredComponents",
+  "tabBar": {
+    "color": "#4c4d4e",
+    "selectedColor": "#e95555",
+    "borderStyle": "white",
+    "list": [
+      {
+        "text": "爱心",
+        "pagePath": "pages/index/index",
+        "iconPath": "static/tabBar/home.png",
+        "selectedIconPath": "static/tabBar/home-active.png"
+      },
+      {
+        "text": "我的",
+        "pagePath": "pages/personal/personal",
+        "iconPath": "static/tabBar/personal.png",
+        "selectedIconPath": "static/tabBar/personal-active.png"
+      }
+    ]
+  }
 }
