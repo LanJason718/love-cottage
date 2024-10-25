@@ -1,4 +1,3 @@
-
 Component({
   properties: {
     navActiveIndex: {
@@ -15,6 +14,7 @@ Component({
     menuRight: '',
     menuTop: '',
     menuHeight: '',
+    env: getApp().globalData.env,
   },
   lifetimes: {
     ready() {

@@ -35,20 +35,20 @@ export const getPolicy = () => {
 export function uploadImageByPolicy(tempFilePath) {
   return new Promise(async (resolve, reject) => {
     try {
-      const policyData = await getPolicy() // 获取策略
+      const policyData = await getPolicy()
       console.log('policyData已获取')
-      const suffix = tempFilePath.substring(tempFilePath.lastIndexOf('.')) // 获取文件后缀
-      const randomName = `${Date.now()}${String(Math.random()).substr(3, 6)}${suffix}` // 生成随机文件名
-      const uploadedUrl = `${policyData.host}/${policyData.dir}${randomName}` // 构建上传后的文件URL
+
+      const suffix = tempFilePath.substring(tempFilePath.lastIndexOf('.'))
+      const randomName = `${Date.now()}${String(Math.random()).substr(3, 6)}${suffix}`
+      const uploadedUrl = `${policyData.host}/${policyData.dir}${randomName}`
       const formData = {
-        key: `${policyData.dir}${randomName}`, // 设置上传的文件名
-        OSSAccessKeyId: policyData.ossaccessKeyId, // 使用正确的属性名
+        key: `${policyData.dir}${randomName}`,
+        OSSAccessKeyId: policyData.ossaccessKeyId,
         signature: policyData.signature,
         policy: policyData.policy,
         success_action_status: 200,
       }
 
-      // 使用 wx.uploadFile 上传文件
       wx.uploadFile({
         url: policyData.host,
         filePath: tempFilePath,
@@ -58,10 +58,9 @@ export function uploadImageByPolicy(tempFilePath) {
         },
         formData: formData,
         success: () => {
-          console.log('图片上传成功, url: ' + uploadedUrl)
           resolve(uploadedUrl)
         },
-        fail: () => {
+        fail: res => {
           reject(new Error('上传失败，状态码: ' + res.statusCode))
         },
       })

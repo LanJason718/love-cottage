@@ -1,8 +1,12 @@
+.container {
+  box-sizing: border-box;
+  padding-top: 50rpx;
+}
 .topBox {
   width: 91%;
   height: 180rpx;
   background: #fff;
-  margin: 50rpx auto 80rpx;
+  margin: 0 auto 80rpx;
   border-radius: 20rpx;
   display: flex;
   align-items: center;

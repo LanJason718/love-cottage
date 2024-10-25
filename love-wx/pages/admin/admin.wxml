@@ -1,5 +1,6 @@
 <view style="height: 10vh;">
   <navigation-bar navActiveIndex="{{navActiveIndex}}" bind:onchange="onchangeNavigation"></navigation-bar>
+
 </view>
 <van-popup custom-class="pop" round show="{{ recordPopShow }}" bind:close="onClose">
   <view>姓名: {{selected.realName}}</view>
@@ -36,7 +37,7 @@
       <view class="tabs">
         <van-tabs active="{{ type }}" swipeable="{{false}}" color="#e95555" title-active-color="#e95555" bind:click="recordTypeChange">
           <van-tab title="全部记录" name="2"></van-tab>
-          <van-tab title="捐赠记录" name="0"></van-tab>
+          <van-tab title="{{env=='prod'?'捐赠':'存放'}}记录" name="0"></van-tab>
           <van-tab title="领取记录" name="1"></van-tab>
         </van-tabs>
       </view>

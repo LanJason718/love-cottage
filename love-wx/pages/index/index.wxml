@@ -1,14 +1,17 @@
 <view class="container">
-  <swiper class="swp" interval="3000" indicator-active-color="#e95555" autoplay circular easing-function="easeInOutCubic">
+  <view class="swp" wx:if="bannerList.length === 1">
+    <image-cache src="{{bannerList[0].url}}" mode="widthFix" />
+  </view>
+  <swiper class="swp" interval="3000" indicator-active-color="#e95555" autoplay circular easing-function="easeInOutCubic" wx:else>
     <swiper-item wx:for="{{bannerList}}" wx:key="index">
-      <image class="swpImg" src="{{item.url}}" mode="widthFix" />
+      <image-cache src="{{item.url}}" mode="widthFix" />
     </swiper-item>
   </swiper>
 
   <view class="itemBox">
     <navigator class="item" url="../donation/donation">
       <image class="img" src="../../static/images/爱心.png" mode="" />
-      <text>爱心捐赠</text>
+      <text>{{env == 'prod'?'爱心捐赠':'物品存放'}}</text>
     </navigator>
 
     <navigator class="item" url="../receive/receive">
@@ -16,5 +19,4 @@
       <text>领取物品</text>
     </navigator>
   </view>
-
 </view>

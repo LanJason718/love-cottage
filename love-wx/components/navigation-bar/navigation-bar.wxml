@@ -3,7 +3,7 @@
   <view class="box" style=" height:{{menuHeight}}px; min-height:{{menuHeight}}px; line-height:{{menuHeight}}px; left:{{menuRight}}px; top:{{menuTop}}px;">
     <van-icon custom-class="icon" name="wap-home-o" color="#000" size="48rpx" bind:click="backHome" />
     <view class="tabs">
-      <van-tabs custom-class="header" nav-class="header2" active="{{ navActiveIndex }}" bind:change="onChange">
+      <van-tabs custom-class="header" nav-class="header2" active="{{ navActiveIndex }}" bind:change="onChange" wx:if="{{env=='prod'}}">
         <van-tab title="记录"></van-tab>
         <van-tab title="统计"></van-tab>
         <van-tab title="反馈"></van-tab>

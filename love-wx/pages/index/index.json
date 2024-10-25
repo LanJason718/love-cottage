@@ -1,4 +1,5 @@
 {
   "usingComponents": {
+    "image-cache": "../../components/image-cache/index"
   }
 }

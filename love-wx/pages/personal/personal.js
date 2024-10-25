@@ -3,7 +3,8 @@ Page({
   /**
    * 页面的初始数据
    */
-  data: {},
+
+  data: { env: getApp().globalData.env },
 
   // 按下时启动定时器
   handleTouchStart: function () {

@@ -22,7 +22,7 @@ Page({
       try {
         const res = await postFeedback({ content, userId })
         wx.showToast({
-          title: '提交成功,感谢您宝贵的建议~',
+          title: '提交成功,感谢您宝贵的建议',
           icon: 'none',
         })
         setTimeout(() => {

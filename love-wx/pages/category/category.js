@@ -9,6 +9,7 @@ Page({
     categories: [],
     activeKey: 0,
     itemList: [],
+    env: getApp().globalData.env,
   },
 
   showToast(title) {

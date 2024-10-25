@@ -1,0 +1,1 @@
+<image src="{{imageSrc}}" mode="{{mode}}" show-menu-by-longpress="{{show-menu-by-longpress}} " fade-in="{{fade-in}}" webp="{{webp}}" lazy-load="{{lazy-load}}" binderror="error" bindload="load" />

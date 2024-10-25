@@ -15,9 +15,20 @@ Page({
     categories: [],
     fileList: [],
     isLoading: false,
+    env: getApp().globalData.env,
   },
 
   async onLoad(options) {
+    if (getApp().globalData.env == 'prod') {
+      wx.setNavigationBarTitle({
+        title: '捐赠物品登记',
+      })
+    } else {
+      wx.setNavigationBarTitle({
+        title: '物品登记',
+      })
+    }
+
     const { realName, grade, phone } = wx.getStorageSync('userInfo')
     this.setData({ realName, grade, phone })
     try {

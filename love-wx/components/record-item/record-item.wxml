@@ -4,7 +4,7 @@
     <view class="info">
       <view class="titleBox">
         <view class="title">{{item.name}}</view>
-        <view class="status" wx:if="{{item.type==0}}">捐赠</view>
+        <view class="status" wx:if="{{item.type==0}}">{{env=='prod'?'捐赠':'存放'}}</view>
         <view class="status" wx:if="{{item.type==1}}">领取</view>
       </view>
       <view class="categoryBox">

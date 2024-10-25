@@ -19,6 +19,7 @@ Page({
     fileList: [],
     isLoading: false,
     selectedItem: '',
+    env: getApp().globalData.env,
   },
 
   async onLoad(options) {
@@ -153,7 +154,7 @@ Page({
         this.resetForm()
       })
   },
-  
+
   // 重置表单
   resetForm() {
     wx.removeStorageSync('current')

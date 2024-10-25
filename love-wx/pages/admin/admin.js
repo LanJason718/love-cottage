@@ -78,6 +78,7 @@ Page({
     ecLine: {
       onInit: initLineChart,
     },
+    env: getApp().globalData.env,
   },
   //饼状图
   async pieData() {
@@ -298,10 +299,13 @@ Page({
         ...params,
       })
 
-      let recordList = response.records.map(item => ({
-        ...item,
-        createTime: dayjs(item.createTime).format('YYYY年MM月DD日 HH:mm'),
-      }))
+      let recordList = response.records.map(item => {
+        item.createTime = dayjs(item.createTime).format('YYYY年MM月DD日 HH:mm')
+        if (item.picture) {
+          item.picture = `${item.picture}?x-oss-process=image/resize,w_750/quality,q_80/format,webp`
+        }
+        return item
+      })
       this.setData({
         recordList: loadMore ? [...this.data.recordList, ...recordList] : recordList,
         totalPages: response.pages, // 设置总页数

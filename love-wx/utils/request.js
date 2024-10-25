@@ -24,7 +24,7 @@ function baseRequest(url, method, data, loading) {
             resolve(data.data)
             break
           case 401:
-            // toLogin()
+            toLogin()
             wx.showToast({
               icon: 'none',
               title: '网络出了差错,请再次尝试',

@@ -19,7 +19,7 @@
           <view class="num"> x {{item.number}}</view>
         </view>
 
-        <view class="text">捐赠时间: {{item.createTime}}</view>
+        <view class="text">{{env=='prod'?'捐赠':'存放'}}时间: {{item.createTime}}</view>
 
       </view>
     </view>
