@@ -6,7 +6,7 @@
   <van-cell-group inset>
     <van-cell title-class="left20" icon="notes-o" title="{{env=='prod'?'捐赠':'存放'}}/领取记录" is-link url="../records/records" />
     <van-cell title-class="left20" icon="envelop-o" title="意见与建议" is-link url="../opinion/opinion" />
-    <van-cell title-class="left20" icon="manager-o" title="管理员入口" is-link url="../admin/admin" wx:if="{{isAdmin}}" />
+    <van-cell title-class="left20" icon="manager-o" title="清理缓存" is-link bind:click="clearCache"/>
 
   </van-cell-group>
 </view>

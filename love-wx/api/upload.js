@@ -40,7 +40,7 @@ export function uploadImageByPolicy(tempFilePath) {
 
       const suffix = tempFilePath.substring(tempFilePath.lastIndexOf('.'))
       const randomName = `${Date.now()}${String(Math.random()).substr(3, 6)}${suffix}`
-      const uploadedUrl = `${policyData.host}/${policyData.dir}${randomName}`
+      const uploadedUrl = `https://image.xiaoyitao.cn/${policyData.dir}${randomName}`
       const formData = {
         key: `${policyData.dir}${randomName}`,
         OSSAccessKeyId: policyData.ossaccessKeyId,
